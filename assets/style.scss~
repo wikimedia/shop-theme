@@ -1,0 +1,14 @@
+body {
+	background: red;
+}
+
+.navbar-default {
+	border: none;
+	background: #fff;
+
+	.navbar-nav > li > a {
+		text-transform: uppercase;
+		font-weight: bold;
+		color: red;
+	}
+}
