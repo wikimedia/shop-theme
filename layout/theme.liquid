@@ -26,7 +26,7 @@
 	{{ content_for_header }}
 
 	{{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
-	{{ 'style.css' | asset_url | stylesheet_tag }}
+	{{ 'style.scss' | asset_url | stylesheet_tag }}
 
 	{{ '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic' | stylesheet_tag }}
 
@@ -46,6 +46,7 @@
 
 	{{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
 	{{ 'bootstrap.min.js' | asset_url | script_tag }}
+	{{ 'header.js' | asset_url | script_tag }}
 
 	<script>jQuery('html').removeClass('no-js').addClass('js');</script>
 
@@ -53,7 +54,7 @@
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
-	<nav class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-default" role="navigation" id="menu">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -68,12 +69,12 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<form class="navbar-form navbar-left" role="search" action="/search" method="get">
+<!--				<form class="navbar-form navbar-left" role="search" action="/search" method="get">
 					<div class="form-group">
 						<input name="q" type="text" class="form-control" placeholder="Search" value="{{ search.terms | escape }}">
 					</div>
 					<button type="submit" class="btn btn-default">Submit</button>
-				</form>
+				</form>-->
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#">Male</a></li>
 					<li><a href="#">Female</a></li>
@@ -84,14 +85,16 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-
+	<div class="clear"></div>
 
 	<div id="main" role="main">
 		{{ content_for_layout }}
 	</div>
 
-	<div class="container">
-		<footer>
+	<footer>
+		<div class="container">
+
+		<h1>Site map in site footer</h1>
 
 		{% if linklists.footer.links.size > 0 %}
 			<p role="navigation">
@@ -111,8 +114,8 @@
 
 		<p role="contentinfo" class="small-print">Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.</p>
 
-		</footer>
-	</div>
+		</div>
+	</footer>
 
 	<!--[if lt IE 8]>
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>

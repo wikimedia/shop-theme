@@ -1,15 +1,522 @@
+/* Layout */
 body {
-	background: red;
-	border: 1px solid green;
+	color: #333;
+	font-size: 1em;
 }
 
-.navbar-default {
-	border: none;
-	background: #fff;
+a,
+a:hover {
+	color: #333
+}
 
-	.navbar-nav > li > a {
-		text-transform: uppercase;
-		font-weight: bold;
-		color: red;
+.clear {
+	clear: both;
+}
+
+
+/* MediaWiki UI */
+
+.mw-ui-select {
+	width: 160px;
+	height: 2em;
+	overflow: hidden;
+	margin: 0;
+	margin-bottom: 10px;
+	padding: 0;
+	border-radius: 2px;
+	border: 1px solid #888;
+	box-sizing: border-box;
+	background-color: #fff;
+	background-image: url( chevron.png );
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+.mw-ui-select select {
+	width: 180px;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	border: none;
+	border-radius: 0;
+	background: transparent;
+	font-size: 1em;
+	line-height: 2em;
+	height: 100%;
+	box-sixing: border-box;
+	padding: 0 1em;
+	margin: 0;
+	border-bottom: 1px solid #fff;
+	outline: none;
+}
+
+.mw-ui-select select:focus {
+	outline: none;
+}
+
+.mw-ui-select select:-moz-focusring {
+	color: transparent;
+	text-shadow: 0 0 0 #000;
+}
+
+.mw-ui-select select:hover {
+	border-bottom: 2px solid #888;
+}
+
+
+input[type="submit"] {
+	font-family: inherit;
+	font-size: 1em;
+	display: inline-block;
+	padding: .5em 1em;
+	margin: 0;
+	box-sizing: border-box;
+
+
+	-webkit-appearance: none;
+
+
+	zoom: 1;
+
+
+	border-radius: 2px;
+	min-width: 4em;
+
+
+	vertical-align: middle;
+
+
+	text-align: center;
+	font-weight: bold;
+
+
+	cursor: pointer;
+
+	border: 0;
+	color: #fff;
+	background: #3C6AFF;
+}
+
+input[type="submit"]:hover {
+	box-shadow: inset 0 -2px rgba( 0, 0, 0, 0.2 );
+}
+
+input[type="submit"]:focus {
+	outline: none;
+	box-shadow: inset 0px 0px 0 3px rgba( 0, 0, 0, 0.2 );
+}
+
+input[type="submit"].constructive {
+	background: #03AF89;
+}
+
+input[type="submit"].quiet {
+	background: #fff;
+	color: #333;
+	font-weight: normal;
+}
+
+input[type="submit"].quiet:hover {
+	box-shadow: none;
+}
+
+/* MediaWiki UI */
+
+
+.breadcrumb {
+	background: transparent;
+	padding: 0;
+	margin: 98px 0 24px 0;
+	font-size: 1.2em;
+}
+
+.breadcrumb>li+li:before {
+	content: ">";
+}
+
+#menu {
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	z-index: 10;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	/* Increased height for the gradient */
+	height: 190px;
+
+
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffffff', endColorstr='#00ffffff',GradientType=0 );
+}
+
+.cart_link {
+	font-weight: bold;
+}
+
+
+.navbar-default .navbar-nav > li > a {
+	text-transform: uppercase;
+	font-size: 1.5em;
+}
+
+.navbar > .container .navbar-brand,
+.navbar > .container-fluid .navbar-brand {
+	background: #3C6AFF;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.extra-blue {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 50px;
+	z-index: 15;
+	background: #3C6AFF;
+}
+
+
+footer {
+	background: #333;
+	color: #888;
+	padding: 48px 0;
+	margin-top: 48px;
+}
+
+footer   a {
+	color: #888;
+	font-size: 1.5em;
+	display: inline-block;
+	margin-right: 30px;
+	margin-bottom: 10px;
+}
+
+footer  a:hover {
+	color: #888;
+}
+
+footer .small-print {
+	text-align: center;
+}
+
+footer .small-print a {
+	font-size: 1em;
+	margin: 0;
+}
+
+footer h1 {
+	margin: 0;
+	margin-bottom: 24px;
+	font: 2em 'Helvetica', Arial, sans-serif;
+	font-weight: bold;
+	color: #888;
+}
+
+/* Layout */
+
+
+
+
+/* Homepage */
+
+.carousel {
+	margin: 0;
+	z-index: 9;
+}
+
+.carousel-inner > .item {
+	background-size: cover;
+	height: 450px;
+}
+
+.carousel-inner > .item a {
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 450px;
+}
+
+.carousel-inner > .item a:hover {
+	text-decoration: none;
+}
+
+.carousel-inner > .item .container {
+	padding-top: 310px;
+	color: white;
+}
+
+.carousel-inner > .item .container > h3 {
+	font: 3em 'Georgia', serif;
+	margin: 0;
+	text-shadow: 0 2px 1px rgba( 0, 0, 0, 0.5 );
+}
+
+.carousel-inner > .item .container > p {
+	font: 1.5em 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-weight: 100;
+	margin: 0;
+	text-shadow: 0 2px 1px rgba( 0, 0, 0, 0.5 );
+}
+
+.carousel-indicators li {
+	background-color: #fff;
+	box-shadow: 0 2px 1px rgba( 0, 0, 0, 0.5 );
+	height: 12px;
+	width: 12px;
+	margin: 0 6px;
+	vertical-align: middle;
+}
+
+.carousel-indicators li.active {
+	height: 16px;
+	width: 16px;
+	margin: 0 6px !important;
+}
+
+.intro {
+	font: 3em 'Georgia', serif;
+	font-weight: bold;
+	margin: 48px 0;
+}
+
+h2 {
+	font-size: 1.6em;
+	display: inline-block;
+	color: #333;
+	margin: 0;
+	font-weight: bold;
+}
+
+h2 + a {
+	font-size: 1.6em;
+	float: right;
+}
+
+hr {
+	margin-top: 12px;
+	margin-bottom: 30px;
+	border-color: #d9d9d9;
+}
+
+.homepage_collection {
+	display: inline-block;
+	width: 100%;
+	height: 420px;
+	font: 2em Georgia, serif;
+	font-weight: bold;
+	line-height: 420px;
+	background-size: cover;
+	text-align: center;
+	color: #fff;
+}
+
+.homepage_collection:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.homepage_product {
+	display: block;
+	height: 195px;
+	margin-bottom: 30px;
+	background-size: cover;
+}
+
+/* Homepage */
+
+/* Collection */
+.collection_header {
+	background-size: cover;
+	height: 450px;
+}
+
+.collection_header > .container {
+	padding-top: 300px;
+	color: white;
+}
+
+.collection_header > .container > h3 {
+	font: 3em 'Georgia', serif;
+	margin: 0;
+}
+
+.collection_header > .container > p {
+	font: 1.5em 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-weight: 100;
+	margin: 0;
+}
+
+.product_grid {
+	height: 350px;
+	margin-bottom: 50px;
+}
+
+.product_grid > .product_image {
+	display: block;
+	background-size: cover;
+	background-position: center;
+	height: 320px;
+}
+
+.product_grid > a {
+	padding-top: 10px;
+	font-size: 1.5em;
+}
+
+.product_grid > a:hover {
+	text-decoration: none;
+}
+
+.product_grid > a > span {
+	font-weight: bold;
+	font-size: 1.3em;
+	display: block;
+}
+/* Collection */
+
+
+/* Collection List */
+.collection_list_item {
+	display: block;
+	background-size: cover;
+	background-position: center;
+	height: 450px;
+	margin-bottom: 24px;
+	font: 3em 'Georgia', serif;
+	color: #fff;
+	padding: 40px;
+	line-height: 700px;
+	text-shadow: 0 2px 1px rgba( 0, 0, 0, 0.5 );
+}
+.collection_list_item:hover {
+	color: #fff;
+	text-decoration: none;
+}
+/* Collection List */
+
+
+/* Product */
+.product_main {
+	height: 500px;
+	background-size: cover;
+	border: 1px solid #ddd;
+	background-position: center;
+}
+
+.product_thumb {
+	height: 150px;
+	background-position: center;
+	background-size: cover;
+	border: 1px solid #ddd;
+	cursor: pointer;
+}
+
+.product_container h1 {
+	margin: 0;
+	font: 3em 'Georgia', serif;
+}
+
+.product_container .product_details {
+	position: relative;
+	height: 500px;
+	margin-top: 138px;
+}
+
+.product_container .product_description {
+	font-size: 1.5em;
+	margin-top: 6px;
+}
+
+.product-price {
+	display: block;
+	margin: 24px 0;
+	font-weight: bold;
+}
+/* Product */
+
+/* Cart */
+.cart {
+	width: 100%;
+	font-size: 1.5em;
+	font-weight: normal;
+	color: #333;
+}
+
+.cart .hide-on-small {
+	width: 70px;
+}
+
+.cart th {
+	font-size: 1em;
+	font-weight: normal;
+	padding-bottom: 10px;
+}
+
+.cart tr {
+	border-bottom: 1px solid #ddd;
+}
+
+.cart .cart_thumbnail {
+	display: block;
+	background-position: center;
+	background-size: cover;
+	height: 56px;
+	width: 58px;
+}
+
+.cart h2 {
+	font-size: 1em;
+	font-weight: normal;
+}
+
+.cart input[type="number"] {
+	border: 1px solid #aaa;
+	border-radius: 2px;
+	width: 60px;
+	font-size: 1em;
+	padding: 0.5em 1em;
+}
+
+.cart .subtotal {
+	border: none;
+}
+
+.cart .subtotal td {
+	padding-top: 30px;
+}
+
+.right-aligned {
+	text-align: right;
+	font-size: 1.2em;
+	margin-top: 48px;
+}
+/* Cart */
+
+
+@media (max-width: 768px) {
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+		background: #fff;
+		border: none;
+	}
+
+	.navbar-toggle {
+		background: #fff;
+	}
+
+	.homepage_collection {
+		margin-bottom: 30px;
 	}
 }

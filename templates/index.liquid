@@ -15,38 +15,64 @@
 		{% capture show_slide %}slide_{{ i }}{% endcapture %}
 		{% capture image %}slideshow_{{ i }}.jpg{% endcapture %}
 		{% capture link %}slide_{{ i }}_link{% endcapture %}
+		{% capture heading %}slide_{{ i }}_heading{% endcapture %}
+		{% capture sub_heading %}slide_{{ i }}_sub_heading{% endcapture %}
 		{% capture alt %}slide_{{ i }}_alt{% endcapture %}
 		{% if settings[show_slide] %}
-			<div class="item {% if i == 1 %}active{% endif %}">
-				<img src="{{ image | asset_url }}" alt="{{ settings[alt] | escape }}" />
-				<div class="carousel-caption">
-					{{ settings[alt] | escape }}
+			<div
+				class="item {% if i == 1 %}active{% endif %}"
+				style="background-image: url({{ image | asset_url }})"
+			>
+				<a href="{{ settings[link] }}">
+				<div class="container">
+					<p>{{ settings[sub_heading] }}</p>
+					<h3>{{ settings[heading] }}</h3>
 				</div>
+				</a>
 			</div>
 		{% endif %}
 	{% endfor %}
 	</div>
 </div>
 
-{% unless settings.homepage_page == blank or pages[settings.homepage_page].empty? %}
-{% assign page = pages[settings.homepage_page] %}
-<div class="rte grid-margins">
-  {{ page.content }}
-</div>
-{% endunless %}
+<div class="container">
+	{% unless settings.homepage_page == blank or pages[settings.homepage_page].empty? %}
+		{% assign page = pages[settings.homepage_page] %}
+		<div class="intro rte grid-margins">
+			{{ page.content }}
+		</div>
+	{% endunless %}
 
-{% unless settings.homepage_collection == blank or collections[settings.homepage_collection].empty? %}
-{% assign collection = collections[settings.homepage_collection] %}
-<ul class="grid clearfix">
-{% for product in collection.products %}
-  {% include 'product-grid-item' with 'three-per-row' %}
-{% else %}
-<li>
-  <p>
-    You have no products in your {{ collections[settings.homepage_collection].title }} collection.
-    <a href="http://www.shopify.com/admin/collections">Add some.</a>
-  <p>
-</li>
-{% endfor %}
-</ul>
-{% endunless %}
+
+	{% unless settings.homepage_collection == blank or collections[settings.homepage_collection].empty? %}
+		{% assign collection = collections[settings.homepage_collection] %}
+		<h2>Shop by collection</h2>
+		<a href="#">View All</a>
+		<hr>
+
+		<div class="row">
+			<div class="col-md-6">
+				<a
+					class="homepage_collection"
+					style="background-image:url({{ collection.image | img_url: 'grande' }})"
+					href="{{ collection.url }}">
+					{{ collection.title }}
+				</a>
+			</div>
+
+			<div class="col-md-6">
+				{% for product in collection.products limit:2 %}
+					<a
+						class="homepage_product"
+						style="background-image: url({{ product.featured_image | product_img_url: 'grande' }})"
+						href="{{ product.url }}"></a>
+				{% else %}
+					<p>
+						You have no products in your {{ collections[settings.homepage_collection].title }} collection.
+						<a href="http://www.shopify.com/admin/collections">Add some.</a>
+					<p>
+				{% endfor %}
+			</div>
+		</div>
+	{% endunless %}
+</div>

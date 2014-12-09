@@ -23,8 +23,16 @@
   - blog post
 {% endcomment %}
 
-<h1 class="left">{{ collection.title }}</h1>
+<div
+	class="collection_header"
+	style="background-image: url({{ collection.image | img_url: 'master' }})">
+	<div class="container">
+		<h3>{{ collection.title }}</h3>
+		<p>{{ collection.description }}</p>
+	</div>
+</div>
 
+<!--
 {% comment %}
   Collection sorting. Needs the JavaScript that is at the bottom of this file.
 {% endcomment %}
@@ -44,9 +52,10 @@
 {% comment %}
   Listing all tags within the current collection.
   Shopify uses product tags to manage subcategories inside collections.
-  See 'How do I create subcategories of products?' at 
+  See 'How do I create subcategories of products?' at
   http://bit.ly/1j1Dti4 for details.
 {% endcomment %}
+
 
 {% if collection.all_tags.size > 0 %}
 <ul class="subcategories clearfix clear">
@@ -63,23 +72,37 @@
     {{ tag | link_to_tag: tag }}
   </li>
   {% endif %}
-  {% endfor %}  
+  {% endfor %}
 </ul>
 {% endif %}
+-->
 
-{% if collection.description.size > 0 %}
-<div class="rte clearfix">
-  {{ collection.description }}
+<div class="container">
+	<ol class="breadcrumb">
+		<li><a href="/">Home</a></li>
+		<li class="active">{{ collection.title }}</li>
+	</ol>
 </div>
-{% endif %}
 
-<ul class="grid clearfix">
-{% for product in collection.products %}
-  {% include 'product-grid-item' with products_per_row %}
-{% else %}
-  <p>There are no products in this view.</p>
-{% endfor %}
-</ul>
+<div  class="container">
+	<div class="row">
+	{% for product in collection.products %}
+		<div class="col-md-4 product_grid">
+			<a
+				href="{{ product.url }}"
+				class="product_image"
+				style="background-image: url({{ product.featured_image | product_img_url: 'grande' }})"></a>
+			<a href="{{ product.url }}">
+				{{ product.title }}
+				<span class="price">{{ product.price }}</span>
+			</a>
+
+		</div>
+	{% else %}
+		<p>There are no products in this view.</p>
+	{% endfor %}
+	</div>
+</div>
 
 {% if paginate.pages > 1 %}
 <div class="pagination centered">
