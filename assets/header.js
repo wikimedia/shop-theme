@@ -2,7 +2,7 @@ $( function () {
 
 	// Keep product thumbnails square
 	var squareProductThumbnail = function () {
-		var $thumbs = $( '.product_thumb' );
+		var $thumbs = $( '.product_thumb, .product_grid .product_image' );
 		$thumbs.each( function () {
 			$( this ).height( $( this ).width() );
 		} );

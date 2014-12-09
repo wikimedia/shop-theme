@@ -87,12 +87,18 @@
 <div  class="container">
 	<div class="row">
 	{% for product in collection.products %}
-		<div class="col-md-4 product_grid">
+
+		{% assign col_width = 4 %}
+		{% if forloop.index < 5 %}
+			{% assign col_width = 6 %}
+		{% endif %}
+
+		<div class="col-md-{{col_width}} product_grid">
 			<a
 				href="{{ product.url }}"
 				class="product_image"
 				style="background-image: url({{ product.featured_image | product_img_url: 'grande' }})"></a>
-			<a href="{{ product.url }}">
+			<a href="{{ product.url }}" class="product_details">
 				{{ product.title }}
 				<span class="price">{{ product.price }}</span>
 			</a>
