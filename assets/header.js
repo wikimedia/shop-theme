@@ -1,5 +1,13 @@
 $( function () {
 
+	// Keep product thumbnails square
+	var squareProductThumbnail = function () {
+		var $thumbs = $( '.product_thumb' );
+		$thumbs.each( function () {
+			$( this ).height( $( this ).width() );
+		} );
+	}
+
 	// Extend blue bar till left edge by adding an extra element
 	var positionExtraBlue = function () {
 		var $navBrand = $( '.navbar-brand' );
@@ -27,9 +35,11 @@ $( function () {
 	$( window ).resize( function () {
 		positionExtraBlue();
 		updateHeaderSize();
+		squareProductThumbnail();
 	} );
 
 	positionExtraBlue();
 	updateHeaderSize();
+	squareProductThumbnail();
 
 } );
