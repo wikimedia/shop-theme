@@ -22,7 +22,7 @@ $( function () {
 	// Make carousel the take up 3/5th of the page
 	var updateHeaderSize = function () {
 		var $item = $( '.carousel-inner > .item, .carousel-inner > .item a, .collection_header' );
-		var height = $( window ).height() * ( 3.0 / 5.0 );
+		var height = $( window ).height() * ( 4.0 / 5.0 );
 		$item.height( height );
 
 		var paddingTop = height - 140;
