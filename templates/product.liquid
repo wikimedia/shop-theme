@@ -19,14 +19,12 @@
 
 
 			{% if product.images.size > 1 %}
-			<br><br>
+			<br>
 			<div class="row">
 			{% for image in product.images %}
-				<div class="col-xs-3">
 				<div
 					class="product_thumb"
 					style="background-image: url({{ image | img_url: 'grande' }})"></div>
-				</div>
 			{% endfor %}
 			</div>
 			{% endif %}
