@@ -252,10 +252,24 @@ footer h1 {
 }
 
 .carousel-inner > .item .container > p {
-	font: 1em 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font: 1.2em 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	letter-spacing: 0.07em;
 	font-weight: 100;
 	margin: 0;
 	text-shadow: 0 2px 1px rgba( 0, 0, 0, 0.5 );
+}
+
+.item.next .carousel-text {
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+	opacity: 0;
+}
+
+.carousel-text {
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
 }
 
 .carousel-indicators li {
@@ -265,7 +279,7 @@ footer h1 {
 	width: 12px;
 	margin: 0 6px;
 	vertical-align: middle;
-	transition: all 0.5s linear;
+	transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .carousel-indicators li.active {

@@ -38,8 +38,8 @@ $( function () {
 		var height = $( window ).height() * ( 4.0 / 5.0 );
 		$item.height( height );
 
-		var paddingTop = height - 140;
-		paddingTop = ( paddingTop < 0 ) ? 0 : paddingTop;
+		var paddingTop = height * ( 4.0 / 5.0 );
+		paddingTop -= $( '.carousel-inner > .item .container, .collection_header .container' ).height();
 		paddingTop += 'px';
 
 		$( '.carousel-inner > .item .container, .collection_header .container' ).css( 'padding-top', paddingTop );
