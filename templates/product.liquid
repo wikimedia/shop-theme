@@ -14,15 +14,17 @@
 			</ol>
 
 			<div
+				data-index="1"
 				class="product_main"
 				style="background-image: url({{ product.featured_image | product_img_url: 'grande' }})"></div>
 
 
 			{% if product.images.size > 1 %}
 			<br>
-			<div class="row">
+			<div class="row product_thumb_container">
 			{% for image in product.images %}
 				<div
+					data-index="{{forloop.index}}"
 					class="product_thumb"
 					style="background-image: url({{ image | img_url: 'grande' }})"></div>
 			{% endfor %}
@@ -318,18 +320,5 @@ jQuery(function($) {
 
 Shopify.Image.preload({{ product.images | json }}, 'grande');
 Shopify.Image.preload({{ product.images | json }}, '1024x1024');
-
-</script>
-
-<script>
-
-// Image Switcher
-
-$( '.product_thumb' ).on( 'mouseenter', function () {
-	var img = $( this ).css( 'background-image' );
-	$( '.product_main' ).css( 'background-image', img );
-} );
-
-
 
 </script>

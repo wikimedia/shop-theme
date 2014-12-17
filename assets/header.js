@@ -55,4 +55,30 @@ $( function () {
 	updateHeaderSize();
 	squareProductThumbnail();
 
+
+	// Product page image switcher
+	$( '.product_thumb' ).on( 'mouseenter', function () {
+		var img = $( this ).css( 'background-image' );
+		var index = $( this ).attr( 'data-index' );
+		$( '.product_main' ).css( 'background-image', img );
+		$( '.product_main' ).attr( 'data-index', index );
+	} );
+
+
+
+	$( '.product_main' ).on( 'click', function () {
+
+		var $this = $( this );
+		var index = $this.attr( 'data-index' );
+		var $next = $( '.product_thumb_container div[data-index=' + index + ']').next();
+		if ( $next.length === 0 ) {
+			$next = $( '.product_thumb_container div[data-index=1]');
+		}
+
+
+		$this.css( 'background-image', $next.css( 'background-image' ) );
+		$this.attr( 'data-index', $next.attr( 'data-index' ) );
+
+
+	} );
 } );
