@@ -4,13 +4,20 @@ $( function () {
 	var squareProductThumbnail = function () {
 		$( '.product_main' ).height( $( '.product_main' ).width() );
 
-		var $thumbs = $( '.product_thumb, .product_grid .product_image' );
+
+		// Product Page
+		var $thumbs = $( '.product_thumb' );
 		var width = ( $( '.product_main' ).width() - 60 ) / 3.0;
 
 		$thumbs.each( function () {
 			$( this )
 				.height( width )
 				.width( width );
+		} );
+
+		// Collection
+		$( '.product_grid .product_image' ).each( function () {
+			$( this ).height( $( this ).width() );
 		} );
 	}
 
