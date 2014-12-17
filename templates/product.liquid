@@ -93,7 +93,12 @@
 				<select id="product-select" name="id">
 				{% for variant in product.variants %}
 					<option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}">
-						{{ variant.price | money }}
+						{% assign title_size = variant.title | size %}
+						{% if title_size < 15 %}
+							{{ variant.title  }} - {{ variant.price | money }}
+						{% else %}
+							{{ variant.title | slice: 0, 15  }}... - {{ variant.price | money }}
+						{% endif %}
 					</option>
 				{% endfor %}
 				</select>
