@@ -82,4 +82,13 @@ $( function () {
 
 	} );
 
+	var feed = new Instafeed({
+		get: 'tagged',
+		tagName: 'wikipedia',
+		clientId: 'b02c3f68b2a944c49add8f778569ee3a',
+		target: 'instagram',
+		resolution: 'low_resolution'
+	});
+	feed.run();
+
 } );
