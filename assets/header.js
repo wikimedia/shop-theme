@@ -82,13 +82,15 @@ $( function () {
 
 	} );
 
-	var feed = new Instafeed({
-		get: 'tagged',
-		tagName: 'wikipedia',
-		clientId: 'b02c3f68b2a944c49add8f778569ee3a',
-		target: 'instagram',
-		resolution: 'low_resolution'
-	});
-	feed.run();
+	if ( $( '#instagram' ).length !== 0 ) {
+		var feed = new Instafeed({
+			get: 'tagged',
+			tagName: $( '#instagram_hashtag' ).val(),
+			clientId: $( '#instagram_client_id' ).val(),
+			target: 'instagram',
+			resolution: 'low_resolution'
+		});
+		feed.run();
+	}
 
 } );
