@@ -70,12 +70,11 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<!--				<form class="navbar-form navbar-left" role="search" action="/search" method="get">
+				<form class="navbar-form navbar-left" role="search" action="/search" method="get">
 					<div class="form-group">
-						<input name="q" type="text" class="form-control" placeholder="Search" value="{{ search.terms | escape }}">
+						<input name="q" type="text" class="form-control" placeholder="Search the shop" value="{{ search.terms | escape }}" id="search">
 					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form>-->
+				</form>
 				<ul class="nav navbar-nav navbar-right">
 					{% for i in (1..5) %}
 						{% capture show_link %}link_{{ i }}{% endcapture %}
