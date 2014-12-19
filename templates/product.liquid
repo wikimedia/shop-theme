@@ -97,7 +97,7 @@
 						{% if title_size < 15 %}
 							{{ variant.title  }} - {{ variant.price | money }}
 						{% else %}
-							{{ variant.title | slice: 0, 15  }}... - {{ variant.price | money }}
+							{{ variant.title | slice: 0, 7  }}...{{ variant.title | slice: -7, 7  }} - {{ variant.price | money }}
 						{% endif %}
 					</option>
 				{% endfor %}
