@@ -1,5 +1,13 @@
 $( function () {
 
+	$( '#search' ).on( 'focus', function () {
+		$( '#menu' ).css( 'background-color', '#fff' );
+	} );
+
+	$( '#search' ).on( 'blur', function () {
+		$( '#menu' ).css( 'background-color', 'rgba( 255, 255, 255, 0.75 )' );
+	} );
+
 	// Instagram Feed on Homepage
 	var shiftInstaFeed = function () {
 		var imgs = $( '#instagram a');
