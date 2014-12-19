@@ -1,212 +1,73 @@
 <p>Theme settings allow designers to provide an easy way for any user to customize the look and feel of their shop without having to delve into HTML or CSS code. Please see our <a title="Open Theme Settings documentation in a new window" target="docs" href="http://docs.shopify.com/themes/theme-templates/settings">help page on theme settings</a> to learn more about how you can make your theme customizable.</p>
 
 <fieldset>
-  <legend>Colors</legend>
-  <h3>Background</h3>
-  <table>
-    <tr>
-      <th><label for="background_color">Background color</label></th>
-      <td><input id="background_color" name="background_color" type="text" class="color" /></td>
-    </tr>
-  </table>
-  <h3>Text</h3>
-  <table>
-    <tr>
-      <th><label for="text_color">Text color</label></th>
-      <td><input id="text_color" name="text_color" type="text" class="color" /></td>
-    </tr>
-    <tr>
-      <th><label for="link_color">Link color</label></th>
-      <td><input id="link_color" name="link_color" type="text" class="color" /></td>
-    </tr>
-  </table>
+	<legend>Header</legend>
+	<h3>Carousel</h3>
+
+	<table>
+		<tr>
+			<td colspan="2"></td>
+			<td>Image</td>
+			<td>Links to</td>
+			<td>Heading</td>
+			<td>Subheading</td>
+		</tr>
+
+		<tr class="odd">
+			<td width="25"><input type="checkbox" id="slide_1" name="slide_1" value="1" /></td>
+			<td><label>Slide #1</label></td>
+			<td><input type="file" id="slide_1" name="slideshow_1.jpg" data-max-width="966" /></td>
+			<td><input type="text" id="slide_1_link" name="slide_1_link" value="/collections/all" size="30" /></td>
+			<td><input type="text" id="slide_1_link" name="slide_1_heading" value="Lorem ipsum" size="30" /></td>
+			<td><input type="text" id="slide_1_link" name="slide_1_sub_heading" value="Dolor sit amet" size="30" /></td>
+		</tr>
+
+		<tr class="even">
+			<td><input type="checkbox" id="slide_2" name="slide_2" value="1"/></td>
+			<td><label>Slide #2</label></td>
+			<td><input type="file" id="slide_2" name="slideshow_2.jpg" data-max-width="966" /></td>
+			<td><input type="text" id="slide_2_link" name="slide_2_link" value="/collections/all" size="30" /></td>
+			<td><input type="text" id="slide_2_link" name="slide_2_heading" value="Lorem ipsum" size="30" /></td>
+			<td><input type="text" id="slide_2_link" name="slide_2_sub_heading" value="Dolor sit amet" size="30" /></td>
+		</tr>
+
+		<tr class="odd">
+			<td><input type="checkbox" id="slide_3" name="slide_3" value="1" /></td>
+			<td><label>Slide #3</label></td>
+			<td><input type="file" id="slide_3" name="slideshow_3.jpg" data-max-width="966" /></td>
+			<td><input type="text" id="slide_3_link" name="slide_3_link" size="30" /></td>
+			<td><input type="text" id="slide_3_link" name="slide_3_heading" value="Lorem ipsum" size="30" /></td>
+			<td><input type="text" id="slide_3_link" name="slide_3_sub_heading" value="Dolor sit amet" size="30" /></td>
+		</tr>
+
+		<tr class="even">
+			<td><input type="checkbox" id="slide_4" name="slide_4" value="1" /></td>
+			<td><label>Slide #4</label></td>
+			<td><input type="file" id="slide_4" name="slideshow_4.jpg" data-max-width="966" /></td>
+			<td><input type="text" id="slide_4_link" name="slide_4_link" size="30" /></td>
+			<td><input type="text" id="slide_4_link" name="slide_4_heading" value="Lorem ipsum" size="30" /></td>
+			<td><input type="text" id="slide_4_link" name="slide_4_sub_heading" value="Dolor sit amet" size="30" /></td>
+		</tr>
+	</table>
 </fieldset>
 
-<fieldset>
-  <legend>Typography</legend>
-  <table>
-    <tr>
-      <th><label for="base_font_family">Typeface</label></th>
-      <td>
-        <select id="base_font_family" name="base_font_family" class="font">
-          <optgroup label="Google Fonts">
-            <option value="'Source Sans Pro', sans-serif">Source Sans Pro</option>
-          </optgroup>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <th><label for="base_font_size">Base font size</label></th>
-      <td>
-        <select id="base_font_size" name="base_font_size">
-          <option value="13px">13px</option>
-          <option value="14px">14px</option>
-          <option value="15px">15px</option>
-          <option value="16px">16px</option>
-        </select>
-       </td>
-    </tr>
-  </table>
-</fieldset>
 
 <fieldset>
-  <legend>Header</legend>
-  <h3>Logo Options</h3>
-  <table>
-    <tr>
-      <td><label for="use_logo">Use Custom Logo?</label></td>
-      <td><input type="checkbox" id="use_logo" name="use_logo" /></td>
-    </tr>
-    <tr>
-      <td><label for="logo_image">Custom Logo</label></td>
-      <td><input type="file" name="logo.png" id="logo_image" data-max-width="1200" data-max-height="1200" /></td>
-    </tr>
-    <tr>
-      <td colspan="2"><small>Recommend the optimal width and height for your logo here.</small></td>
-    </tr>
-  </table>
-  <h3>Social links</h3>
-  <table>
-    <tr>
-      <td colspan="2"><small>All links, except the email one, must begin with <i>http://</i>, <i>https://</i> or <i>//</i>. The email must be your email address with no <i>mailto:</i> prefix. Leave the text box blank if you don't want to use the corresponding icon.</small></td>
-    </tr>
-    <tr>
-      <th><label for="facebook_url">Facebook URL</label></th>
-      <td><input type="text" id="facebook_url" name="facebook_url" /></td>
-    </tr>
-    <tr>
-      <th><label for="featured_blog">Blog feed</label></th>
-      <td><select class="blog" id="featured_blog" name="featured_blog" value="news" /></td>
-    </tr>
-    <tr>
-      <th><label for="social_icons_style">Social icons style</label></th>
-      <td>
-        <select id="social_icons_style" name="social_icons_style">
-          <option value="">Silhouette</option>
-          <option value="-circle">Circle</option>
-          <option value="-rounded">Rounded corners</option>
-          <option value="-square">Square</option>
-        </select>
-      </td>
-    </tr>
-  </table>
+	<legend>Homepage</legend>
 
-  <h3>Carousel</h3>
-  <table>
-    <tr>
-      <td colspan="2"></td>
-      <td>Image</td>
-      <td>Links to</td>
-      <td>Heading</td>
-      <td>Subheading</td>
-     </tr>
-     <tr class="odd">
-       <td width="25"><input type="checkbox" id="slide_1" name="slide_1" value="1" /></td>
-       <td><label>Slide #1</label></td>
-       <td><input type="file" id="slide_1" name="slideshow_1.jpg" data-max-width="966" /></td>
-       <td><input type="text" id="slide_1_link" name="slide_1_link" value="/collections/all" size="30" /></td>
-       <td><input type="text" id="slide_1_link" name="slide_1_heading" value="Lorem ipsum" size="30" /></td>
-       <td><input type="text" id="slide_1_link" name="slide_1_sub_heading" value="Dolor sit amet" size="30" /></td>
-     </tr>
-     <tr class="even">
-       <td><input type="checkbox" id="slide_2" name="slide_2" value="1"/></td>
-       <td><label>Slide #2</label></td>
-       <td><input type="file" id="slide_2" name="slideshow_2.jpg" data-max-width="966" /></td>
-       <td><input type="text" id="slide_2_link" name="slide_2_link" value="/collections/all" size="30" /></td>
-       <td><input type="text" id="slide_2_link" name="slide_2_heading" value="Lorem ipsum" size="30" /></td>
-       <td><input type="text" id="slide_2_link" name="slide_2_sub_heading" value="Dolor sit amet" size="30" /></td>
-     </tr>
-     <tr class="odd">
-       <td><input type="checkbox" id="slide_3" name="slide_3" value="1" /></td>
-       <td><label>Slide #3</label></td>
-       <td><input type="file" id="slide_3" name="slideshow_3.jpg" data-max-width="966" /></td>
-       <td><input type="text" id="slide_3_link" name="slide_3_link" size="30" /></td>
-       <td><input type="text" id="slide_3_link" name="slide_3_heading" value="Lorem ipsum" size="30" /></td>
-       <td><input type="text" id="slide_3_link" name="slide_3_sub_heading" value="Dolor sit amet" size="30" /></td>
-     </tr>
-     <tr class="even">
-       <td><input type="checkbox" id="slide_4" name="slide_4" value="1" /></td>
-       <td><label>Slide #4</label></td>
-       <td><input type="file" id="slide_4" name="slideshow_4.jpg" data-max-width="966" /></td>
-       <td><input type="text" id="slide_4_link" name="slide_4_link" size="30" /></td>
-       <td><input type="text" id="slide_4_link" name="slide_4_heading" value="Lorem ipsum" size="30" /></td>
-       <td><input type="text" id="slide_4_link" name="slide_4_sub_heading" value="Dolor sit amet" size="30" /></td>
-     </tr>
-  </table>
-</fieldset>
+	<h3>Content</h3>
+	<table>
+		<tr>
+			<th><label for="homepage_page">Show content of this page</label></th>
+			<td><select id="homepage_page" class="page" name="homepage_page" value="frontpage" /></td>
+		</tr>
+	</table>
 
-<fieldset>
-  <legend>Footer</legend>
-  <table>
-  </table>
-</fieldset>
-
-<fieldset>
-  <legend>Homepage</legend>
-  <h3>Content</h3>
-  <table>
-    <tr>
-      <th><label for="homepage_page">Show content of this page</label></th>
-      <td><select id="homepage_page" class="page" name="homepage_page" value="frontpage" /></td>
-    </tr>
-  </table>
-  <h3>Featured collection</h3>
-  <table>
-    <tr>
-      <th><label for="homepage_collection">Feature products from this collection</label></th>
-      <td><select id="homepage_collection" class="collection" name="homepage_collection" value="frontpage" /></td>
-    </tr>
-  </table>
-</fieldset>
-
-<fieldset>
-  <legend>Product pages</legend>
-  <table>
-  </table>
-</fieldset>
-
-<fieldset>
-  <legend>Collection pages</legend>
-  <h3>Product Grid</h3>
-  <table>
-    <tr>
-      <th><label for="products_per_row">Number of products per row</label></th>
-      <td>
-        <select id="products_per_row" name="products_per_row">
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4" selected="selected">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <th><label for="number_of_rows">Number of rows</label></th>
-      <td>
-        <select id="number_of_rows" name="number_of_rows">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3" selected="selected">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-        </select>
-      </td>
-    </tr>
-  </table>
-</fieldset>
-
-<fieldset>
-  <legend>Blog pages</legend>
-  <table>
-  </table>
-</fieldset>
-
-<fieldset>
-  <legend>Cart page</legend>
-  <table>
-  </table>
+	<h3>Featured collection</h3>
+	<table>
+		<tr>
+			<th><label for="homepage_collection">Feature products from this collection</label></th>
+			<td><select id="homepage_collection" class="collection" name="homepage_collection" value="frontpage" /></td>
+		</tr>
+	</table>
 </fieldset>
