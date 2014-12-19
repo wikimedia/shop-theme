@@ -80,11 +80,11 @@
 {% if settings.instagram_show %}
 <br>
 <div class="container">
-		<h2>#{{ settings.instagram_hashtag}}</h2>
+		<h2 id="instagram_heading">#{{ settings.instagram_hashtag}}</h2>
 		<a href="http://instagram.com/wikipediashop">Wikimedia Store on Instagram</a>
 		<hr>
 		<input type="hidden" id="instagram_client_id" value="{{ settings.instagram_client_id }}">
 		<input type="hidden" id="instagram_hashtag" value="{{ settings.instagram_hashtag }}">
 </div>
-<div id="instagram"></div>
+<div id="instagram_container"><div id="instagram"></div></div>
 {% endif %}

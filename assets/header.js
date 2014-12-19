@@ -1,5 +1,33 @@
 $( function () {
 
+	// Instagram Feed on Homepage
+	var shiftInstaFeed = function () {
+		var imgs = $( '#instagram a');
+		var heading_left = $( '#instagram_heading' ).position().left;
+		$( '#instagram' ).css( 'margin-left', 0 );
+
+		imgs.each( function () {
+			var img_left = $( this ).position().left;
+			if ( img_left > heading_left ) {
+				$( '#instagram' ).css( 'margin-left', ( heading_left - img_left ) + 'px' );
+				return false;
+			}
+		} );
+	};
+
+	if ( $( '#instagram' ).length !== 0 ) {
+		var feed = new Instafeed({
+			get: 'tagged',
+			tagName: $( '#instagram_hashtag' ).val(),
+			clientId: $( '#instagram_client_id' ).val(),
+			target: 'instagram',
+			resolution: 'low_resolution',
+			after: shiftInstaFeed
+		});
+		feed.run();
+	}
+
+
 	// Keep product thumbnails square
 	var squareProductThumbnail = function () {
 		$( '.product_main' ).height( $( '.product_main' ).width() );
@@ -49,6 +77,7 @@ $( function () {
 		positionExtraBlue();
 		updateHeaderSize();
 		squareProductThumbnail();
+		shiftInstaFeed();
 	} );
 
 	positionExtraBlue();
@@ -81,16 +110,5 @@ $( function () {
 
 
 	} );
-
-	if ( $( '#instagram' ).length !== 0 ) {
-		var feed = new Instafeed({
-			get: 'tagged',
-			tagName: $( '#instagram_hashtag' ).val(),
-			clientId: $( '#instagram_client_id' ).val(),
-			target: 'instagram',
-			resolution: 'low_resolution'
-		});
-		feed.run();
-	}
 
 } );
