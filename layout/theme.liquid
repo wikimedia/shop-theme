@@ -77,9 +77,14 @@
 					<button type="submit" class="btn btn-default">Submit</button>
 				</form>-->
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Male</a></li>
-					<li><a href="#">Female</a></li>
-					<li><a href="#">More</a></li>
+					{% for i in (1..5) %}
+						{% capture show_link %}link_{{ i }}{% endcapture %}
+						{% capture link_text %}link_{{ i }}_text{% endcapture %}
+						{% capture link_link %}link_{{ i }}_link{% endcapture %}
+						{% if settings[show_link] %}
+							<li><a href="{{ settings[link_link] }}">{{ settings[link_text] }}</a></li>
+						{% endif %}
+					{% endfor %}
 					<li><a href="/cart" class="cart_link">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
