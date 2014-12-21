@@ -1,0 +1,35 @@
+<div class="container">
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li class="active">Activate Account</li>
+</ol>
+</div>
+
+<div class="container">
+<div class="row">
+	<div class="col-md-12">
+		<h2>Activate Account</h2>
+		<hr/>
+	</div>
+
+	<div class="col-md-12">
+		{% form 'activate_customer_password' %}
+		{{ form.errors | default_errors }}
+
+		<div class="password">
+			<label for="password">Password</label><br>
+			<input type="password" name="customer[password]" class="mw-ui-input" /><br>
+		</div>
+		<div class="password_confirm">
+			<label for="password_confirmation">Password Confirmation</label><br>
+			<input type="password" name="customer[password_confirmation]" class="mw-ui-input"/><br>
+		</div>
+		<div class="action_bottom">
+			<input type="submit" value="Activate Account" />
+			<span>or</span>
+			<input type="submit" name="decline" value="Decline Invitation" />
+		</div>
+		{% endform %}
+	</div>
+</div>
+</div>
