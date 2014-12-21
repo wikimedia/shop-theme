@@ -588,6 +588,77 @@ hr {
 /* Cart */
 
 
+/* Customer Login */
+label {
+	font-weight: normal;
+}
+.mw-ui-input {
+	-webkit-appearance: none;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	width: 100%;
+	padding: .4em .3em .2em .6em;
+	display: block;
+	vertical-align: middle;
+	border-radius: 2px;
+	color: inherit;
+	background-color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	transition: border linear .2s, box-shadow linear .2s;
+	width: 275px;
+}
+
+.mw-ui-input::-webkit-input-placeholder {
+	.field-placeholder-styling;
+}
+
+.mw-ui-input::-moz-placeholder {
+	.field-placeholder-styling;
+}
+
+.mw-ui-input:-moz-placeholder {
+	.field-placeholder-styling;
+}
+
+.mw-ui-input:-ms-input-placeholder {
+	.field-placeholder-styling;
+}
+
+.mw-ui-input:invalid {
+	box-shadow: none;
+}
+
+.mw-ui-input:focus {
+	box-shadow: inset 0 0 0 2px #347BFF;
+	border-color: #347BFF;
+	outline: 0;
+}
+
+.mw-ui-input:disabled {
+	border-color: #eee;
+	background: #eee;
+	color: #ddd;
+}
+
+.errors {
+	color: #c00;
+	border: 1px solid #fac5c5;
+	background-color: #fae3e3;
+	font-size: 0.9em;
+	margin: 0 0 1em 0;
+	padding: 0.5em;
+	word-wrap: break-word;
+}
+
+.errors ul {
+	margin: 0;
+	padding-left: 20px;
+}
+/* Customer Login */
+
+
 @media (max-width: 768px) {
 	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
 		background: #fff;
