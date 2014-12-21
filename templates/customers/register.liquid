@@ -1,0 +1,31 @@
+<div class="container">
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li class="active">Register</li>
+</ol>
+</div>
+
+<div class="container">
+<h2>Register</h2>
+<hr>
+
+{% form 'create_customer' %}
+
+{{ form.errors | default_errors }}
+
+<label for="first_name">First Name</label><br>
+<input type="text" value="" class="mw-ui-input" name="customer[first_name]" size="30" /><br>
+
+<label for="last_name">Last Name</label><br>
+<input type="text" value="" class="mw-ui-input" name="customer[last_name]" size="30" /><br>
+
+<label for="email">Email Address</label><br>
+<input type="email" value="" class="mw-ui-input" name="customer[email]" size="30" /><br>
+
+<label for="password">Password</label><br>
+<input type="password" value="" class="mw-ui-input" name="customer[password]" size="30" /><br>
+
+<input type="submit" class="constructive" value="Create" />
+
+{% endform %}
+</div>
