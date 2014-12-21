@@ -1,10 +1,17 @@
 $( function () {
 
-	$( '#search' ).on( 'focus', function () {
+	// Toggle
+	$( '.navbar-toggle' ).off( 'click' );
+	$( '.navbar-toggle' ).on( 'click', function () {
+		$( '#site-wrap' ).toggleClass( 'site-shift' );
+	} );
+
+	// Search
+	$( '.search-input' ).on( 'focus', function () {
 		$( '#menu' ).css( 'background-color', '#fff' );
 	} );
 
-	$( '#search' ).on( 'blur', function () {
+	$( '.search-input' ).on( 'blur', function () {
 		$( '#menu' ).css( 'background-color', 'rgba( 255, 255, 255, 0.75 )' );
 	} );
 
