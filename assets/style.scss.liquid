@@ -216,6 +216,8 @@ input[type="submit"].quiet:hover {
 
 #search:focus {
 	background-image: url( 's_active.svg' );
+	background-position: center left;
+	background-repeat: no-repeat;
 }
 
 #menu {
@@ -663,14 +665,27 @@ hr {
 /* Customer */
 
 
+/* Navbar Toggle: only visible on small devices */
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle {
+	background: none;
+	border: none;
+	position: absolute;
+	left: -20px;
+	margin: 4px;
+	width: 40px;
+}
+/* Navbar Toggle: only visible on small devices */
+
 @media (max-width: 768px) {
+
+	.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+		padding-left: 40px;
+	}
+
 	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
 		background: #fff;
 		border: none;
-	}
-
-	.navbar-toggle {
-		background: #fff;
 	}
 
 	.homepage_collection {
@@ -679,5 +694,34 @@ hr {
 
 	.product_container .product_details {
 		margin-top: 30px;
+	}
+
+	#search::-webkit-input-placeholder { color: #fff; }
+	#search::-moz-placeholder { color: #fff; }
+	#search::-ms-input-placeholder { color: #fff; }
+
+	#search,
+	#search:focus {
+		background-color: #3C6AFF;
+		color: #fff;
+		background-image: url( 's_white.svg' );
+		background-position: center left;
+		background-repeat: no-repeat;
+	}
+
+	.navbar-default .navbar-form {
+		border: none;
+	}
+
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form,
+	#bs-example-navbar-collapse-1 {
+		box-shadow: none;
+		background-color: #3C6AFF;
+		color: #fff;
+	}
+
+
+	#bs-example-navbar-collapse-1 a {
+		color: #fff;
 	}
 }
