@@ -9,7 +9,10 @@
 <div class="row">
 	<div class="col-md-12">
 		<h4 class="name">{{ customer.name }}</h4>
-		<p class="email note">{{ customer.email }}</p>
+		<p class="email note">
+			{{ customer.email }}
+			{{ '(Log out)' | customer_logout_link }}
+		</p>
 		<br><br>
 	</div>
 </div>

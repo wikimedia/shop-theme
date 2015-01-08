@@ -100,6 +100,20 @@
 							<li><a href="{{ settings[link_link] }}">{{ settings[link_text] }}</a></li>
 						{% endif %}
 					{% endfor %}
+					{% if shop.customer_accounts_enabled %}
+						{% if customer %}
+							<li>
+								<a href="/account">My Account</a>
+							</li>
+						{% else %}
+							<li>
+								{{ 'Log in' | customer_login_link }}
+							</li>
+							<li>
+								{{ 'Register' | customer_register_link }}
+							</li>
+						{% endif %}
+					{% endif %}
 					<li><a href="/cart" class="cart_link">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
