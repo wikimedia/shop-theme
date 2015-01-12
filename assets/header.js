@@ -72,7 +72,7 @@ $( function () {
 		var $extraBlue = $( '<div>' )
 			.addClass( 'extra-blue' )
 			.css( 'width', width )
-			.appendTo( document.body );
+			.appendTo( $('#menu' ) );
 	}
 
 	// Make carousel the take up 3/5th of the page
