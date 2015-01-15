@@ -32,7 +32,7 @@
 				style="background-image: url({{ product.featured_image | product_img_url: 'grande' }})"></a>
 			<a href="{{ product.url }}" class="product_details">
 				{{ product.title }}
-				<span class="price">{{ product.price }}</span>
+				<span class="price">{{ product.price | money }}</span>
 			</a>
 
 		</div>
