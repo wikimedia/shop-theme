@@ -25,7 +25,7 @@
 
 				<a href="{{ item.url }}" class="product_details">
 					{{ item.title }}
-					<span class="price">{{ item.price }}</span>
+					<span class="price">{{ item.price | money }}</span>
 				</a>
 			</div>
 		{% endfor %}
