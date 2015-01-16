@@ -126,4 +126,10 @@ $( function () {
 
 	} );
 
+
+	// Hide .vendor_container if there is no .vendor
+	// https://office.wikimedia.org/wiki/Wikimedia_Shop/Theme/Vendor_Details
+	if ( $( '.vendor' ).size() === 0 && $( '.vendor_container' ).size() === 1 ) {
+		$('.vendor_container').hide();
+	}
 } );
