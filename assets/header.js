@@ -32,9 +32,9 @@ $( function () {
 
 	if ( $( '#instagram' ).length !== 0 ) {
 		var feed = new Instafeed({
-			get: 'tagged',
-			tagName: $( '#instagram_hashtag' ).val(),
-			clientId: $( '#instagram_client_id' ).val(),
+			get: 'user',
+			userId: parseInt( $( '#instagram_user_id' ).val() ),
+			accessToken: $( '#instagram_access_token' ).val(),
 			target: 'instagram',
 			resolution: 'low_resolution',
 			after: shiftInstaFeed
