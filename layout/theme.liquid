@@ -55,37 +55,9 @@
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
-<ul id="off-navigation">
-	<form class="navbar-form navbar-left" role="search" action="/search" method="get">
-		<div class="form-group">
-			<input name="q" type="text" class="search-input form-control" placeholder="Search the shop" value="{{ search.terms | escape }}">
-		</div>
-	</form>
-
-	{% for i in (1..5) %}
-		{% capture show_link %}link_{{ i }}{% endcapture %}
-		{% capture link_text %}link_{{ i }}_text{% endcapture %}
-		{% capture link_link %}link_{{ i }}_link{% endcapture %}
-		{% if settings[show_link] %}
-			<li><a href="{{ settings[link_link] }}">{{ settings[link_text] }}</a></li>
-		{% endif %}
-	{% endfor %}
-	{% if shop.customer_accounts_enabled %}
-		{% if customer %}
-			<li>
-				<a href="/account">My Account</a>
-			</li>
-		{% else %}
-			<li>
-				{{ 'Log in' | customer_login_link }}
-			</li>
-			<li>
-				{{ 'Register' | customer_register_link }}
-			</li>
-		{% endif %}
-	{% endif %}
-	<li><a href="/cart" class="cart_link">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})</a></li>
-</ul>
+<div id="off-navigation">
+	{% include 'navigation' %}
+</div>
 
 <div id="site-wrap">
 	<nav class="navbar navbar-default" role="navigation" id="menu">
@@ -100,36 +72,7 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<form class="navbar-form navbar-left" role="search" action="/search" method="get">
-					<div class="form-group">
-						<input name="q" type="text" class="search-input form-control" placeholder="Search the shop" value="{{ search.terms | escape }}">
-					</div>
-				</form>
-				<ul class="nav navbar-nav navbar-right">
-					{% for i in (1..5) %}
-						{% capture show_link %}link_{{ i }}{% endcapture %}
-						{% capture link_text %}link_{{ i }}_text{% endcapture %}
-						{% capture link_link %}link_{{ i }}_link{% endcapture %}
-						{% if settings[show_link] %}
-							<li><a href="{{ settings[link_link] }}">{{ settings[link_text] }}</a></li>
-						{% endif %}
-					{% endfor %}
-					{% if shop.customer_accounts_enabled %}
-						{% if customer %}
-							<li>
-								<a href="/account">My Account</a>
-							</li>
-						{% else %}
-							<li>
-								{{ 'Log in' | customer_login_link }}
-							</li>
-							<li>
-								{{ 'Register' | customer_register_link }}
-							</li>
-						{% endif %}
-					{% endif %}
-					<li><a href="/cart" class="cart_link">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})</a></li>
-				</ul>
+				{% include 'navigation' %}
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>

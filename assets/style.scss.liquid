@@ -688,7 +688,6 @@ hr {
 }
 
 #off-navigation {
-	list-style: none;
 	background: #111;
 	width: 100%;
 	height: 100%;
@@ -703,12 +702,22 @@ hr {
 	padding: 10px 20px;
 }
 
-#off-navigation li {
+#off-navigation ul {
+	list-style: none;
+	padding: 0;
+}
+
+#off-navigation ul li {
 	padding: 10px 0;
 }
 
 #off-navigation a {
 	color: #fff;
+}
+
+#off-navigation a:hover {
+	background: #fff;
+	color: #3C6AFF;
 }
 
 /* Navbar Toggle: only visible on small devices */
