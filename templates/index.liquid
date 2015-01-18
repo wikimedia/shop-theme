@@ -81,7 +81,10 @@
 <br>
 <div class="container">
 		<h2 id="instagram_heading">@{{ settings.instagram_user_name}}</h2>
-		<a href="http://instagram.com/wikipediashop">Wikimedia Store on Instagram</a>
+		<a href="http://instagram.com/wikipediashop" class="instagram_link">
+			<img src="{{ 'instagram.png' | asset_url }}" />
+			<span>Wikimedia Store on Instagram</span>
+		</a>
 		<hr>
 		<input type="hidden" id="instagram_access_token" value="{{ settings.instagram_access_token }}">
 		<input type="hidden" id="instagram_user_id" value="{{ settings.instagram_user_id }}">
