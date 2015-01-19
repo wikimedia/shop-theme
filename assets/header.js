@@ -82,7 +82,7 @@ $( function () {
 		$item.height( height );
 
 		var paddingTop = height * ( 4.0 / 5.0 );
-		paddingTop -= $( '.carousel-inner > .item .container, .collection_header .container' ).height();
+		paddingTop -= $( '.carousel-inner > .item .container:visible, .collection_header .container:visible' ).height();
 		paddingTop += 'px';
 
 		$( '.carousel-inner > .item .container, .collection_header .container' ).css( 'padding-top', paddingTop );
