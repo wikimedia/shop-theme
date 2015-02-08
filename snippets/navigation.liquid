@@ -1,4 +1,5 @@
 <form class="navbar-form navbar-left" role="search" action="/search" method="get">
+	<input type="hidden" name="type" value="product" />
 	<div class="form-group">
 		<input name="q" type="text" class="search-input form-control" placeholder="Search the shop" value="{{ search.terms | escape }}">
 	</div>
