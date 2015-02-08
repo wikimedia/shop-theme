@@ -12,11 +12,9 @@
 		<thead>
 			<tr>
 				<th class="hide-on-small"></th>
-				<th>&nbsp;</th>
-				<th class="hide-on-small">Price</th>
+				<th>Item</th>
 				<th>Quantity</th>
-				<th>Total</th>
-				<th class="hide-on-small">&nbsp;</th>
+				<th class="total_col">Total</th>
 			</tr>
 		</thead>
 
@@ -48,8 +46,10 @@
 				<td>
 					<h2 class="delta">
 						<a href="{{ collection_url }}{{ item.url }}">
-							{{ item.title }}
+							{{ item.title }} - {{ item.price | money }}
 						</a>
+						<br/>
+						<a href="/cart/change?line={{ forloop.index }}&quantity=0" class="remove_link">X Remove</a>
 					</h2>
 					{% comment %}
 					Line Item Properties
@@ -71,40 +71,34 @@
 					{% endif %}
 				</td>
 
-				<td class="hide-on-small">{{ item.price | money }}</td>
-
 				<td>
 					<input type="number" name="updates[]" id="updates_{{ item.id }}" class="quantity" value="{{ item.quantity }}" />
 				</td>
 
-				<td>{{ item.line_price | money }}</td>
+				<td class="total_col">{{ item.line_price | money }}</td>
 
-				<td class="hide-on-small">
-					<a href="/cart/change?line={{ forloop.index }}&quantity=0">Remove</a>
-				</td>
 			</tr>
 			{% endfor %}
 
 			<tr class="subtotal">
 				<td></td>
-				<td></td>
-				<td>Subtotal</td>
-				<td>{{ cart.total_price | money }}</td>
+				<td>
+					<a class="hide-on-small" href="{{ continue_shopping_url }}">Continue shopping</a>
+					<br/><br/>
+					<div class="column third flow-opposite left-aligned">
+						<p>Special instructions for seller</p>
+						<textarea class="special_note" name="note">{{ cart.note }}</textarea>
+					</div>
 				</td>
+				<td><input type="submit" name="update" value="Update cart" class="quiet" id="update_cart" /></td>
+				<td class="total_col">{{ cart.total_price | money }}</td>
 			</tr>
 		</tbody>
 	</table>
 
-{% comment %}
-For the checkout and update buttons to work, they need to use
-a name attribute set to 'checkout' and 'update', respectively. That's case-sensitive.
-{% endcomment %}
+
 
 <div class="right-aligned">
-	<a class="hide-on-small" href="{{ continue_shopping_url }}">Continue shopping</a>
-	&nbsp;&nbsp;&nbsp;
-	<input type="submit" name="update" value="Update cart" class="quiet" />
-	&nbsp;&nbsp;&nbsp;
 	<input type="submit" name="checkout" class="constructive" value="Check out" />
 
 	{% comment %}Paypal and Google checkout buttons{% endcomment %}
@@ -114,16 +108,6 @@ a name attribute set to 'checkout' and 'update', respectively. That's case-sensi
 			{{ content_for_additional_checkout_buttons }}
 		</p>
 	{% endif %}
-</div>
-
-{% comment %}
-For the special instructions to be submitted with order,
-we need to use a name attribute set to 'note'.
-{% endcomment %}
-
-<div class="column third flow-opposite left-aligned">
-	<p>Special instructions for seller</p>
-	<textarea name="note">{{ cart.note }}</textarea>
 </div>
 
 </form>
