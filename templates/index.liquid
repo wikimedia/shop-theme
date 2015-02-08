@@ -80,8 +80,13 @@
 {% if settings.instagram_show %}
 <br>
 <div class="container">
-		<h2 id="instagram_heading">@{{ settings.instagram_user_name}}</h2>
-		<a href="http://instagram.com/wikipediashop" class="instagram_link">
+		<h2 id="instagram_heading">
+			<a href="http://instagram.com/{{ settings.instagram_user_name}}">
+				@{{ settings.instagram_user_name}}
+			</a>
+		</h2>
+
+		<a href="http://instagram.com/{{ settings.instagram_user_name}}" class="instagram_link">
 			<img src="{{ 'instagram.png' | asset_url }}" />
 			<span>Wikimedia Store on Instagram</span>
 		</a>
