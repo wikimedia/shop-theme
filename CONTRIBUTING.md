@@ -10,5 +10,6 @@
   1. Fork the repository
   2. Send pull requests
   3. PROFIT??
-  
-Issues are logged in [Phabricator](https://phabricator.wikimedia.org/project/view/913/).
+
+
+Issues are logged in [Phabricator](https://phabricator.wikimedia.org/project/view/913/). Liquid documentation can be found on the [shopify website](http://docs.shopify.com/themes/liquid-documentation/basics).
