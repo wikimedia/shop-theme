@@ -127,7 +127,7 @@ input[type="submit"] {
 	font-size: 1em;
 	line-height: 1em;
 	display: inline-block;
-	padding: .5em 1em;
+	padding: 10px 20px;
 	margin: 0;
 	box-sizing: border-box;
 
@@ -198,8 +198,9 @@ input[type="submit"].quiet:hover {
 	width: 300px;
 	background-image: url( 's.svg' );
 	background-position: center left;
+    background-size:40px 40px;
 	background-repeat: no-repeat;
-	padding-left: 30px;
+	padding-left: 40px;
 }
 
 .search-input:focus {
@@ -212,7 +213,7 @@ input[type="submit"].quiet:hover {
 
 #menu {
 	transition: all .25s ease-in-out;
-	background-color: rgba( 255, 255, 255, 0.75 );
+	background-color: rgba( 255, 255, 255, 0.9 );
 	border: none;
 	border-radius: 0;
 	margin: 0;
@@ -229,10 +230,42 @@ input[type="submit"].quiet:hover {
 	font-weight: bold;
 }
 
+.cart-count {
+    padding:4px 12px 6px 32px;
+    background-color:transparent;
+    border:1px solid #666;
+    color:#fff;
+    color:#666;
+    border-radius:4px;
+    position:relative;
+}
+
+.cart-count:before {
+    content:" ";
+    display:block;
+    position:absolute;
+    height:20px;
+    width:20px;
+    opacity:0.5;
+    left:10px;
+    top:5px;
+    background-image: url(http://cdn.shopify.com/s/files/1/0713/7997/t/2/assets/icon-shopping-basket.svg);
+    background-size:18px 18px;
+    background-repeat:no-repeat;
+}
+
+.cart-count:hover {
+    background-color:#fff;
+}
 
 .navbar-default .navbar-nav > li > a {
-	text-transform: uppercase;
+	font-weight:500;
 	font-size: 1em;
+    
+}
+
+.navbar {
+    box-shadow:0px 2px 2px rgba(0,0,0,0.1);
 }
 
 .navbar > .container .navbar-brand,
@@ -361,11 +394,14 @@ footer h1 {
 }
 
 .carousel-inner > .item .container > p {
-	font: 1.2em 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font: 1em 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 	letter-spacing: 0.07em;
 	font-weight: 300;
-	margin: 0;
-	text-shadow: 0 1px 1px rgba( 0, 0, 0, 0.5 );
+    display:inline-block;
+    background-color:rgba(0,0,0,0.5);
+    text-transform:uppercase;
+    padding:5px 10px;    
+    margin-bottom:5px;
 }
 
 .item.next .carousel-text {
@@ -381,20 +417,32 @@ footer h1 {
 	-webkit-transition: opacity .25s ease-in-out;
 }
 
+.carousel-text > p {
+    display:inline-block;
+    background-color:#000;
+    text-transform:uppercase;
+    padding:5px 10px;
+    font-size:13px !important;
+    margin-bottom:10px;
+}
+
 .carousel-indicators li {
 	background-color: #fff;
-	box-shadow: 0 2px 1px rgba( 0, 0, 0, 0.5 );
+	//box-shadow: 0 2px 1px rgba( 0, 0, 0, 0.5 );
 	height: 12px;
 	width: 12px;
-	margin: 0 6px;
+	margin: 0 5px;
 	vertical-align: middle;
-	transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    border:1px solid white;
+    background-color:transparent;
+	//transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .carousel-indicators li.active {
-	height: 16px;
-	width: 16px;
-	margin: 0 6px !important;
+    background-color:#fff;
+    border-color:#347bff;
+    margin:0 5px;
+    border:1px solid white;
 }
 
 .intro {
@@ -492,6 +540,9 @@ hr {
 .product_grid > .product_details {
 	display: block;
 	margin: 24px 0 30px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
 }
 
 .product_grid > a:first {
@@ -560,7 +611,6 @@ hr {
 
 .product_container .product_details {
 	position: relative;
-	height: 500px;
 	margin-top: 138px;
 }
 
@@ -708,7 +758,7 @@ hr {
 #site-wrap {
 	min-width: 100%;
 	min-height: 100%;
-	background-color: #fff;
+	background-color: #f9f9f9;
 	position: relative;
 	top: 0;
 	bottom: 100%;
@@ -755,6 +805,12 @@ hr {
 	background: #fff;
 	color: #3C6AFF;
 }
+
+#off-navigation a.cart_link:hover{
+    background:transparent;
+    color:#fff;
+}
+
 
 /* Navbar Toggle: only visible on small devices */
 @media (max-width: 992px) {
@@ -849,4 +905,13 @@ hr {
 	.instagram_link span {
 		display: none;
 	}
+    
+    .cart-count {
+        color:#fff;
+        border-color:#fff; 
+    }
+    .cart-count:hover {
+        color:#3C6AFF;
+        border-color:#3C6AFF;
+    }
 }
