@@ -1,5 +1,5 @@
 <div id="carousel" class="carousel slide" data-ride="carousel">
-	<!-- Indicators 
+	<!-- Indicators -->
 	<ol class="carousel-indicators">
 	{% for i in (1..4) %}
 		{% capture show_slide %}slide_{{ i }}{% endcapture %}
@@ -7,7 +7,7 @@
 			<li data-target="#carousel" data-slide-to="{{ i }}" {% if i == 1 %} class="active" {% endif %}></li>
 		{% endif %}
 	{% endfor %}
-	</ol -->
+	</ol>
 
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
