@@ -200,6 +200,7 @@ input[type="submit"].quiet:hover {
 	background-position: center left;
 	background-size: 40px 40px;
 	background-repeat: no-repeat;
+	font-size: 1em;
 	padding-left: 40px;
 }
 
@@ -336,6 +337,11 @@ footer h1 {
 
 #instagram {
 	height: 306px;
+	/*
+	 * This is a temporary fixing patch for the offset problem of instagram section
+	 * TODO fix the algorithm in JS
+	 */
+	margin-left: 0 !important;
 	white-space: nowrap;
 }
 
