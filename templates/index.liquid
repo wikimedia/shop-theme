@@ -78,11 +78,25 @@
 
 		<a href="http://instagram.com/{{ settings.instagram_user_name}}" class="instagram_link">
 			<img src="{{ 'instagram.png' | asset_url }}" />
-			<span>Wikimedia Store on Instagram</span>
+			<span>Wikipedia store on Instagram</span>
 		</a>
 		<hr>
 		<input type="hidden" id="instagram_access_token" value="{{ settings.instagram_access_token }}">
 		<input type="hidden" id="instagram_user_id" value="{{ settings.instagram_user_id }}">
 </div>
 <div id="instagram_container"><div id="instagram"></div></div>
+<div class="aboutUsWrapper">
+    <div class="container">
+        <h2>About us</h2>
+        <div class="left">
+             <p>Wikipedia volunteers are special. They hail from all across the globe, representing every professional and personal experience one can imagine. They donate tons of hours per year to writing and editing Wikipedia. Without them, we would not exist.</p>
+          <p>We can’t thank them enough - but we’re trying. That’s why we created the <a target="_blank" href="https://meta.wikimedia.org/wiki/Merchandise_giveaways">Merchandise Giveaway Program</a>, amongst other projects. Through it, any Wikipedia user can nominate a Wikipedia contributor to receive a free gift in the mail.</p>
+        </div>
+        <div class="right">
+             <p>We had a great time finding creative and sustainable merchandise for this program. When people started asking if they could buy our shirts, bags and pens, we thought - <i>why not?</i></p>
+             <p>What goes around, comes around. We invite you to support the community with your purchase. Thank you for being a part of it!</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
 {% endif %}
