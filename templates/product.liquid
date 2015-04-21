@@ -315,11 +315,6 @@ jQuery(function($) {
 
   new Shopify.OptionSelectors('product-select', { product: {{ product | json }}, onVariantSelected: selectCallback, enableHistoryState: true });
 
-  // Add label if only one product option and it isn't 'Title'.
-  {% if product.options.size == 1 and product.options.first != 'Title' %}
-    $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first }}</label>');
-  {% endif %}
-
 });
 
 Shopify.Image.preload({{ product.images | json }}, 'grande');
