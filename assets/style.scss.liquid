@@ -1,6 +1,8 @@
 /* Layout */
 html, body{
 	height: 100%;
+  	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;  
 }
 
 body {
@@ -200,7 +202,7 @@ input[type="submit"].quiet:hover {
 	background-position: center left;
 	background-size: 40px 40px;
 	background-repeat: no-repeat;
-	font-size: 1em;
+  	font-size: 1em;
 	padding-left: 40px;
 }
 
@@ -232,11 +234,11 @@ input[type="submit"].quiet:hover {
 }
 
 .cart-count {
-	padding: 6px 12px 6px 32px;
+	padding: 4px 12px 6px 32px;
 	background-color: transparent;
-	border: 1px solid #ccc;
+	border: 1px solid #666;
 	color: #fff;
-	color: #333;
+	color: #666;
 	border-radius: 2px;
 	position: relative;
 }
@@ -249,7 +251,7 @@ input[type="submit"].quiet:hover {
 	width: 20px;
 	opacity: 0.5;
 	left: 10px;
-	top: 6px;
+	top: 5px;
 	background-image: url(//cdn.shopify.com/s/files/1/0713/7997/t/2/assets/icon-shopping-basket.svg);
 	background-size: 18px 18px;
 	background-repeat: no-repeat;
@@ -287,7 +289,7 @@ input[type="submit"].quiet:hover {
 }
 
 
-footer {
+/*footer {
 	background: #333;
 	color: #888;
 	padding: 48px 0;
@@ -322,6 +324,145 @@ footer h1 {
 	font: 1.2em 'Helvetica', Arial, sans-serif;
 	font-weight: bold;
 	color: #888;
+}*/
+
+/*
+ * New About Us section layout
+ * Added by Hui
+ */
+.aboutUsWrapper{
+    background-color: #347BFF;
+  	margin-top: 3em;
+    padding: 3em 0;
+    width: 100%;
+  
+  
+}
+.aboutUsWrapper h2 {
+    clear: both;
+    color: #F9F9F9;
+  	display: block;
+    font: 2.25em "Georgia",serif;
+    line-height: 24px;
+    margin: 0;
+    text-align: left;
+}
+.aboutUsWrapper .container div {
+    width: 46%;
+}
+.aboutUsWrapper .container div.left { float: left; }
+.aboutUsWrapper .container div.right { float: right; }
+.aboutUsWrapper p {
+    color: #F9F9F9;
+    font-size:  1em;
+    line-height:  24px;
+    margin:  1.5em 0 0 0;
+    /*text-align: justify;*/
+}
+.aboutUsWrapper p a {
+    color: #F9F9F9;
+    text-decoration: underline;
+}
+
+
+footer .footerWrapper {
+    background-color: #2d2d2d;
+    padding: 3em 0;
+    width: 100%;
+}
+
+footer .footerWrapper .one-fifth {
+    float: left;
+    width: 22%;
+}
+
+footer .footerWrapper .one-fifth.right {
+    float: right;
+}
+footer .footerWrapper h3 {
+    color: #F9F9F9;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 0 1em 0;
+}
+footer .footerWrapper .one-fifth p {
+    font-size: 1em;
+  	margin: 0;
+    line-height: 24px;
+}
+footer .footerWrapper .one-fifth p strong {
+    font-size: 1.2em;
+}
+footer .footerWrapper .one-fifth a {
+    color: #888888;
+    text-decoration: none;
+}
+footer .footerWrapper .one-fifth a:hover {
+    text-decoration: underline;
+}
+footer .footerWrapper .one-fifth .emailInput {
+    background: #888888 url( 'message.svg' ) 0.875em center / 20px 20px no-repeat;
+    border: none;
+    border-radius: 2px;
+    color: #333;
+    font-size: 0.875em;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 40px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+
+footer .footerWrapper .one-fifth .socialLinks {
+    margin-top: 1em;
+}
+footer .footerWrapper .one-fifth .socialLinks a {
+    background: transparent url( 'socialicons.png' ) 0 0 no-repeat;
+    border-radius: 28px;
+    height: 28px;
+    display: inline-block;
+    font-size: 0;
+    margin-right: 10px;
+    opacity: 1.0;
+    overflow: hidden;
+    text-indent: -999px;
+    width: 28px;
+}
+footer .footerWrapper .one-fifth .socialLinks a.w {
+    background-position: 0 0;
+}
+footer .footerWrapper .one-fifth .socialLinks a.i {
+    background-position: -28px 0;
+}
+footer .footerWrapper .one-fifth .socialLinks a.t {
+    background-position: -56px 0;
+}
+footer .footerWrapper .one-fifth .socialLinks a.f {
+    background-position: -84px 0;
+}
+footer .footerWrapper .logoInfo {
+    border-top: 1px solid #464646;
+    margin-top: 3em;
+    padding-top: 1.5em;
+    width: 100%;
+}
+footer .footerWrapper .logoInfo p {
+    color: #888;
+    font-size: 0.75em;
+  	margin: 0;
+    line-height: 18px;
+    text-align: right;
+}
+footer .footerWrapper .logoInfo a {
+    background: transparent url( 'wiki_logo.svg' ) 0 0 / 176px 50px no-repeat;
+    display: inline-block;
+    float: left;
+    font-size: 0;
+    height: 50px;
+    overflow: hidden;
+    text-indent: -999px;
+    width: 176px;
 }
 
 /* Layout */
@@ -337,11 +478,8 @@ footer h1 {
 
 #instagram {
 	height: 306px;
-	/*
-	 * This is a temporary fixing patch for the offset problem of instagram section
-	 * TODO fix the algorithm in JS
-	 */
-	margin-left: 0 !important;
+  	/*TODO check the algorithm of picture location computing*/
+    margin-left: 0 !important; /*this is a temporary patch to fix instagram offset problem*/
 	white-space: nowrap;
 }
 
@@ -452,7 +590,7 @@ footer h1 {
 	font: 2em 'Georgia', serif;
 	font-weight: bold;
 	margin: 48px 0;
-	line-height: 1.4em;
+    line-height: 1.4em;
 }
 
 h2 {
@@ -613,6 +751,10 @@ hr {
 	font: 2em 'Georgia', serif;
 }
 
+.product_container{
+    padding-bottom: 2em;    
+}
+
 .product_container .product_details {
 	position: relative;
 	margin-top: 138px;
@@ -638,7 +780,7 @@ hr {
 	color: #fff;
 	margin: 0;
 	padding: 2em;
-	margin-bottom: -48px;
+	/*margin-bottom: -48px;*/
 }
 
 .vendor_container .description {
@@ -653,6 +795,7 @@ hr {
 .vendor_container hr {
 	border-color: #fff;
 }
+
 /* Product */
 
 /* Cart */
