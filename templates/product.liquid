@@ -89,7 +89,7 @@
 				{% assign hide_default_title = true %}
 			{% endif %}
 
-			<div id="product-variants" class="{% if hide_default_title %} hidden{% endif %} mw-ui-select">
+			<div id="product-variants" class="{% if hide_default_title %} hidden{% endif %}">
 				<select id="product-select" name="id">
 				{% for variant in product.variants %}
 					<option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}">
@@ -314,6 +314,14 @@ var selectCallback = function(variant, selector) {
 jQuery(function($) {
 
   new Shopify.OptionSelectors('product-select', { product: {{ product | json }}, onVariantSelected: selectCallback, enableHistoryState: true });
+
+  // Style select boxes
+  $( 'select.single-option-selector' ).each( function () {
+    var $this = $( this ), $div = $( '<div>' ).addClass( 'mw-ui-select' );
+    $this.before( $div );
+    $div.append( $this.detach() );
+  } );
+
 
 });
 
