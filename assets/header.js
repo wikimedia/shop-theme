@@ -4,7 +4,16 @@ $( function () {
 	$( '.navbar-toggle' ).off( 'click' );
 	$( '.navbar-toggle' ).on( 'click', function () {
 		$( '#site-wrap' ).toggleClass( 'site-shift' );
+      	$( '.menu-mask' ).css( 'display', 'block' );
+      	$( '#off-navigation' ).toggleClass( 'off-navigation-show' );
 	} );
+  	
+  	$( '.menu-mask' ).off( 'click' );
+  	$( '.menu-mask' ).on( 'click touchstart', function() {
+      	$( '#site-wrap' ).toggleClass( 'site-shift' );
+      	$( '.menu-mask' ).css( 'display', 'none' );
+      	$( '#off-navigation' ).toggleClass( 'off-navigation-show' );
+    } );
 
 	// Search
 	$( '.search-input' ).on( 'focus', function () {
@@ -16,9 +25,12 @@ $( function () {
 	} );
 
 	// Instagram Feed on Homepage
+  	// only effective on Homepage
+  	//if ($( '#instagram' ).length != 0)
 	var shiftInstaFeed = function () {
 		var imgs = $( '#instagram a');
 		var heading_left = $( '#instagram_heading' ).position().left;
+      	var panelWidth = 0;
 		$( '#instagram' ).css( 'margin-left', 0 );
 
 		imgs.each( function () {
@@ -28,6 +40,7 @@ $( function () {
 				return false;
 			}
 		} );
+      	$( '#instagram a:last-child').addClass('last');
 	};
 
 	if ( $( '#instagram' ).length !== 0 ) {
@@ -36,11 +49,12 @@ $( function () {
 			userId: parseInt( $( '#instagram_user_id' ).val() ),
 			accessToken: $( '#instagram_access_token' ).val(),
 			target: 'instagram',
-			resolution: 'low_resolution',
+			resolution: 'standard_resolution',
 			after: shiftInstaFeed
 		});
 		feed.run();
 	}
+	//}
 
 
 	// Keep product thumbnails square
@@ -50,8 +64,9 @@ $( function () {
 
 		// Product Page
 		var $thumbs = $( '.product_thumb' );
-		var width = ( $( '.product_main' ).width() - 60 ) / 3.0;
-
+		//var width = ( $( '.product_main' ).width() - 60 ) / 3.0;
+      	var width = ( $( '.product_main' ).width() - 40 ) / 3.0;
+		
 		$thumbs.each( function () {
 			$( this )
 				.height( width )
@@ -101,35 +116,79 @@ $( function () {
 
 
 	// Product page image switcher
+// 	$( '.product_thumb' ).on( 'mouseenter', function () {
+// 		var img = $( this ).css( 'background-image' );
+// 		var index = $( this ).attr( 'data-index' );
+// 		$( '.product_main' ).css( 'background-image', img );
+// 		$( '.product_main' ).attr( 'data-index', index );
+// 	} );
+
+
+
+// 	$( '.product_main' ).on( 'click', function () {
+
+// 		var $this = $( this );
+// 		var index = $this.attr( 'data-index' );
+// 		var $next = $( '.product_thumb_container div[data-index=' + index + ']').next();
+// 		if ( $next.length === 0 ) {
+// 			$next = $( '.product_thumb_container div[data-index=1]');
+// 		}
+
+
+// 		$this.css( 'background-image', $next.css( 'background-image' ) );
+// 		$this.attr( 'data-index', $next.attr( 'data-index' ) );
+
+
+// 	} );
 	$( '.product_thumb' ).on( 'mouseenter', function () {
 		var img = $( this ).css( 'background-image' );
+      	img = img.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
 		var index = $( this ).attr( 'data-index' );
-		$( '.product_main' ).css( 'background-image', img );
-		$( '.product_main' ).attr( 'data-index', index );
+		$( '.product_main img' ).attr( 'src', img );
+		$( '.product_main img' ).attr( 'data-index', index );
 	} );
+  	
 
 
 
 	$( '.product_main' ).on( 'click', function () {
-
-		var $this = $( this );
-		var index = $this.attr( 'data-index' );
+      	var $img = $( '.product_main img' );
+		var index = $img.attr( 'data-index' );
 		var $next = $( '.product_thumb_container div[data-index=' + index + ']').next();
 		if ( $next.length === 0 ) {
 			$next = $( '.product_thumb_container div[data-index=1]');
 		}
+		
+      	var img = $next.css( 'background-image' );
+      	img = img.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
+      	console.log(img);
 
-
-		$this.css( 'background-image', $next.css( 'background-image' ) );
-		$this.attr( 'data-index', $next.attr( 'data-index' ) );
-
-
+		$img.attr( 'src', img );
+		$img.attr( 'data-index', $next.attr( 'data-index' ) );
 	} );
-
 
 	// Hide .vendor_container if there is no .vendor
 	// https://office.wikimedia.org/wiki/Wikimedia_Shop/Theme/Vendor_Details
 	if ( $( '.vendor' ).size() === 0 && $( '.vendor_container' ).size() === 1 ) {
 		$('.vendor_container').hide();
 	}
+  	
+  	// set min-height for #main when content is too short
+  	var setMinHeight = function() {
+        var mainHeight = $( '#main' ).height();
+        var footerHeight = $( 'footer' ).height();
+        var windowHeight = $( window ).height();
+        var minHeight = 0;
+        if ((mainHeight + footerHeight) < windowHeight) {
+            minHeight = windowHeight - footerHeight;
+            $( '#main' ).css( 'min-height', minHeight );
+        }
+    };
+    $( document ).ready(function() {
+      	setMinHeight();
+    });
+  	$( window ).resize( function() {
+      	setMinHeight();
+    });
+  	
 } );
