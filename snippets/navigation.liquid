@@ -1,7 +1,7 @@
 <form class="navbar-form navbar-left" role="search" action="/search" method="get">
 	<input type="hidden" name="type" value="product" />
 	<div class="form-group">
-		<input name="q" type="text" class="search-input form-control" placeholder="Search the shop" value="{{ search.terms | escape }}">
+		<input name="q" type="text" class="search-input form-control" placeholder="Search the store" value="{{ search.terms | escape }}">
 	</div>
 </form>
 
@@ -20,11 +20,11 @@
 				<a href="/account">My Account</a>
 			</li>
 		{% else %}
-			<li>
-				{{ 'Log in' | customer_login_link }}
-			</li>
-			<li>
+<!-- 			<li>
 				{{ 'Join' | customer_register_link }}
+			</li> -->
+  			<li>
+				{{ 'Login' | customer_login_link }}
 			</li>
 		{% endif %}
 	{% endif %}
