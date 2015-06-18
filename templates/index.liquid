@@ -23,6 +23,8 @@
 		{% endif %}
 	{% endfor %}
 	</div>
+  	<a class="left carousel-control" data-slide="prev" role="button" href="#carousel"> </a>
+	<a class="right carousel-control" data-slide="next" role="button" href="#carousel"> </a>
 </div>
 
 <div class="container">
@@ -36,8 +38,8 @@
 
 	{% unless settings.homepage_collection == blank or collections[settings.homepage_collection].empty? %}
 		{% assign collection = collections[settings.homepage_collection] %}
-		<h2>Shop by collection</h2>
-		<a href="/collections/">View All</a>
+		<h2><a href="/collections/">Shop by collection</a></h2>
+		<a class="viewall" href="/collections/">View All</a>
 		<hr>
 
 		<div class="row">
@@ -68,7 +70,6 @@
 </div>
 
 {% if settings.instagram_show %}
-<br>
 <div class="container">
 		<h2 id="instagram_heading">
 			<a href="http://instagram.com/{{ settings.instagram_user_name}}">
