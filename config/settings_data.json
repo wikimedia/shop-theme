@@ -1,9 +1,1 @@
-{
-	"current": "Slate",
-	"presets": {
-		"Slate": {
-			"homepage_page": "frontpage",
-			"homepage_collection": "frontpage",
-		}
-	}
-}
+{"current":{"slide_1":true,"slide_1_link":"\/collections\/featured","slide_1_heading":"Featured products","slide_1_sub_heading":"Wikipedia","slide_2":true,"slide_2_link":"\/collections\/accessories","slide_2_heading":"Plantable pencils","slide_2_sub_heading":"Citation needed","slide_3":false,"slide_3_link":"\/search?type=product&q=globe+t-shirt","slide_3_heading":"Globe t-shirts","slide_3_sub_heading":"Wikipedia","slide_4":false,"slide_4_link":"\/collections\/kids","slide_4_heading":"Future Wikipedians","slide_4_sub_heading":"For the","link_1":true,"link_1_text":"Women","link_1_link":"\/collections\/women","link_2":true,"link_2_text":"Men","link_2_link":"\/collections\/men","link_3":true,"link_3_text":"Kids","link_3_link":"\/collections\/kids","link_4":true,"link_4_text":"Accessories","link_4_link":"\/collections\/accessories","link_5":false,"link_5_text":"","link_5_link":"","homepage_page":"frontpage","homepage_collection":"featured","instagram_show":true,"instagram_access_token":"1603056979.cba4443.e9e5ec14cf714aa2bec0a826527983fd","instagram_user_id":"1603056979","instagram_user_name":"wikipediastore","show_multiple_currencies":true,"currency_format":"money_with_currency_format","supported_currencies":"AUD CAD CHF CNY DKK EUR GBP HKD NOK NZD RUB SEK SGD TWD USD","default_currency":"USD","checkout_use_header_image":false,"checkout_banner_background_color":"#ffffff","checkout_logo":"","checkout_headline":"","checkout_accent_color":"#2a9dcc","checkout_button_color":"#2a9dcc","checkout_call_to_action_color":"#8fc243","customer_layout":"customer_area"}}
