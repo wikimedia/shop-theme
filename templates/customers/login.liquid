@@ -6,6 +6,79 @@
 </div>
 
 <div class="container">
+		<div id="login-row" class="row">
+			<hr class="login-hr">
+			<div class="col-md-6 login-col">
+				<h2 class="login-title">Login</h2>
+              	<hr class="login-hr1">
+				{% form 'customer_login' %} {{ form.errors | default_errors }}
+				<label for="customer_email">Email Address</label>
+				<br>
+				<input type="email" class="mw-ui-input" name="customer[email]" />
+				<br>
+				<label for="customer_password">Password<span class="repass-link">Forgot Password?</span></label>
+				<br>
+				<input type="password" class="mw-ui-input" name="customer[password]" />
+				<br>
+				<input type="submit" class="constructive" value="Login" /> {% endform %}
+			</div>
+			<div class="col-md-6 register-col">
+				<h2 class="register-title">Register</h2>
+              	<hr class="register-hr">
+				{% form 'create_customer' %} {{ form.errors | default_errors }}
+				<label for="first_name">First Name</label>
+				<br>
+				<input type="text" value="" class="mw-ui-input" name="customer[first_name]" size="30" />
+				<br>
+				<label for="last_name">Last Name</label>
+				<br>
+				<input type="text" value="" class="mw-ui-input" name="customer[last_name]" size="30" />
+				<br>
+				<label for="email">Email Address</label>
+				<br>
+				<input type="email" value="" class="mw-ui-input" name="customer[email]" size="30" />
+				<br>
+				<label for="password">Password</label>
+				<br>
+				<input type="password" value="" class="mw-ui-input" name="customer[password]" size="30" />
+				<br>
+				<input type="submit" class="constructive" value="Register" /> {% endform %}
+			</div>
+		</div>
+		<div id="forgot-password" class="row login-hidde-toggle">
+          	<div class="col-md-6 forgot-col">
+			<h2>Forgot Password?</h2>
+            <hr/>
+            {% form 'recover_customer_password' %}
+            {{ form.errors | default_errors }}
+
+            <label for="customer_email">Email Address</label><br>
+            <input type="email" class="mw-ui-input" name="customer[email]" /><br>
+            <input type="submit" value="Submit" />
+          	<br>
+            <span class="back-to-login">Back to login</span>
+
+            {% endform %}
+            </div>
+		</div>
+	</div>
+	<script>
+      	$( document ).ready(function () {
+        	if(window.location.href.indexOf("#") > -1) {
+               window.location.replace("/account/login");
+            }
+        });
+		$( ' .repass-link ' ).on( 'click', function() {
+			$( '#login-row' ).toggleClass( 'login-hidde-toggle' );
+          	$( '#forgot-password' ).toggleClass( 'login-hidde-toggle' );
+		});
+		$( '.back-to-login' ).on( 'click', function() {
+			$( '#login-row' ).toggleClass( 'login-hidde-toggle' );
+          	$( '#forgot-password' ).toggleClass( 'login-hidde-toggle' );
+		});
+	</script>
+
+<!-- <div class="container">
 <div class="row">
 	<div class="col-md-6">
 		<h2>Login</h2>
@@ -37,4 +110,4 @@
 		{% endform %}
 	</div>
 </div>
-</div>
+</div> -->
