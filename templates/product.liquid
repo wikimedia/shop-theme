@@ -13,10 +13,18 @@
 				<li class="active">{{ product.title }}</li>
 			</ol>
 
-			<div
+<!-- 			<div
 				data-index="1"
 				class="product_main"
-				style="background-image: url({{ product.featured_image | product_img_url: 'grande' }})"></div>
+				style="background-image: url({{ product.featured_image | product_img_url: 'grande' }})">
+              	<a class="product_arrow_left"></a>
+				<a class="product_arrow_right"></a>
+          	</div> -->
+          	<div class="product_main">
+                <img src="{{ product.featured_image | product_img_url: 'grande' }}" alt="Wikipedia Store - {{ product.title }}" data-index="1" />
+                <a class="product_arrow_left"></a>
+                <a class="product_arrow_right"></a>
+            </div>
 
 
 			{% if product.images.size > 1 %}
@@ -89,7 +97,7 @@
 				{% assign hide_default_title = true %}
 			{% endif %}
 
-			<div id="product-variants" class="{% if hide_default_title %} hidden{% endif %} mw-ui-select">
+			<div id="product-variants" class="{% if hide_default_title %} hidden{% endif %}">
 				<select id="product-select" name="id">
 				{% for variant in product.variants %}
 					<option{% if variant == product.selected_or_first_available_variant %} selected{% endif %} value="{{ variant.id }}">
