@@ -20,13 +20,11 @@
 				<a href="/account">My Account</a>
 			</li>
 		{% else %}
-<!-- 			<li>
-				{{ 'Join' | customer_register_link }}
-			</li> -->
-  			<li>
+			<li>
 				{{ 'Login' | customer_login_link }}
 			</li>
 		{% endif %}
 	{% endif %}
 	<li><a href="/cart" class="cart_link"><span title="Cart total: {{ cart.total_price | money }}" class="cart-count">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }}</span></a></li>
+	{% include 'currency-picker' %}
 </ul>
